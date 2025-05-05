@@ -11,5 +11,5 @@ Tiles_Area = Width // Columns
 
 #Graphics
 Background = (46, 45, 45)
-Grid = (255,255,255)
+Grid = (255, 255 ,255)
 
