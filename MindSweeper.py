@@ -8,6 +8,7 @@ Height = 800
 Rows = 10
 Columns = 10
 Tiles_Area = Width // Columns
+Mine_Total = 10
 
 #Graphics
 Background = (46, 45, 45)
@@ -47,6 +48,12 @@ for i in range(9):
 gameboard = [[0 for _ in range(Columns)] for _ in range(Rows)]
 reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
 warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
+
+#Mine Setup
+mine_location = random.sample(range(Rows * Columns), Mine_Total)
+for loc in mine_location:
+   row, column= divmod(loc, Columns)
+   board[row][column] = -1
 
 
 
