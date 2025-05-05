@@ -13,3 +13,9 @@ Tiles_Area = Width // Columns
 Background = (46, 45, 45)
 Grid = (255, 255 ,255)
 
+pygame.init()
+screen = pygame.display.set_caption("Mind Sweeper")
+font =pygame.font.SysFont("damascus",24)
+
+
+
