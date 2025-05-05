@@ -13,7 +13,11 @@ Tiles_Area = Width // Columns
 Background = (46, 45, 45)
 Grid = (255, 255 ,255)
 
-pygame.init()
+def main():  
+     pygame.init()
+     screen = pygame.display.set_caption("Mind Sweeper")
+     font =pygame.font.SysFont("damascus",24)
+     
 
 
 def load_img(file):
@@ -38,10 +42,15 @@ for i in range(9):
   tile_types[str(i)] = load_img(f'Mine_Icon_{i}.png')
 
 
-screen = pygame.display.set_caption("Mind Sweeper")
-font =pygame.font.SysFont("damascus",24)
+#Creating the Grid for the Game
+#*underscore can denote a throwaway variable that is not reused, just for incrementing purposes.*
+gameboard = [[0 for _ in range(Columns)] for _ in range(Rows)]
+reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
+warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
 
 
 
+if __name__ == "__main__":
+   main()
 
 
