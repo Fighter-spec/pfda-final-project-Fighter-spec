@@ -56,8 +56,8 @@ for loc in mine_location:
    board[row][column] = -1
 #Tuple splits the division and remainder into the two variables listed
 
-for r in range(ROWS):
-   for c in range(COLS):
+for r in range(Rows):
+   for c in range(Columns):
       if board[r][c] == -1:
          continue
       count = 0
@@ -66,6 +66,7 @@ for r in range(ROWS):
       for dr in [-1,0,1]:
          for dc in [-1,0,1]:
             nr, nc, = r + dr, c + dc
+            
         
         
    
