@@ -45,7 +45,7 @@ for i in range(9):
 
 #Creating the Grid for the Game
 #*underscore can denote a throwaway variable that is not reused, just for incrementing purposes.*
-gameboard = [[0 for _ in range(Columns)] for _ in range(Rows)]
+board = [[0 for _ in range(Columns)] for _ in range(Rows)]
 reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
 warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
 
@@ -54,7 +54,21 @@ mine_location = random.sample(range(Rows * Columns), Mine_Total)
 for loc in mine_location:
    row, column= divmod(loc, Columns)
    board[row][column] = -1
+#Tuple splits the division and remainder into the two variables listed
 
+for r in range(ROWS):
+   for c in range(COLS):
+      if board[r][c] == -1:
+         continue
+      count = 0
+      #check neighbors - dr posiitive is down, dc positve is right
+      #all 8 sides covered here
+      for dr in [-1,0,1]:
+         for dc in [-1,0,1]:
+            nr, nc, = r + dr, c + dc
+        
+        
+   
 
 
 if __name__ == "__main__":
