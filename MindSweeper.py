@@ -66,6 +66,12 @@ for r in range(Rows):
       for dr in [-1,0,1]:
          for dc in [-1,0,1]:
             nr, nc, = r + dr, c + dc
+            if 0 <= nr < Rows and 0 <= nc < Columns:
+               if board[nr][nc] == -1:
+                  count += 1
+      board[r][c] = count
+
+    #potential challenge: keep everything in bounds!
             
         
         
