@@ -46,6 +46,15 @@ def main():
             for c in range(Columns):
                rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
                pygame.draw.rect(screen, Grid, rect, 1)
+
+               tile_image = None
+
+               if reveal_tiles[r][c]:
+                  if board[r][c] == -1:
+                     tiles_image = tile_types['warning']
+                  
+                  
+
                
            
                     
