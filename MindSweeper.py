@@ -16,8 +16,25 @@ Grid = (255, 255 ,255)
 
 def main():  
      pygame.init()
-     screen = pygame.display.set_caption("Mind Sweeper")
+     screen = pygame.display.set_mode((Width, Height))
+     pygame.display.set_caption("Mind Sweeper")
      font =pygame.font.SysFont("damascus",24)
+     current_running = True
+     game_ended = False
+     while current_running:
+        screen.fill(Background)
+     for event in pygame.event.get():
+          if event.type ==pygame.QUIT:
+             current_running = False
+
+          elif event.type == pygame.MOUSEBUTTONDOWN and not game_ended:
+             x, y = pygame.mouse.get_pos()
+             r, c = y // Tiles_Area, x // Tiles_Area
+
+            if event.button == 1:
+                
+             
+        
      
 
 
@@ -71,8 +88,27 @@ for r in range(Rows):
                   count += 1
       board[r][c] = count
 
-    #potential challenge: keep everything in bounds!
-            
+    #potential challenge: keep everything in bounds when showing empties!
+def empties(r, c):
+    if not(0 <= r < Rows and 0 <= c < Columns):
+        return
+    if reveal_tiles[r][c] or warnings[r][c]:
+        return
+    reveal_tiles[r][c] = True
+    if board[r][c] == 0:
+       for dr in [-1, 0, 1]:
+          for dc in [-1, 0, 1]:
+             if dr != 0 or dc != 0:
+                empties(r + dr, c + dc)
+
+
+
+
+
+
+
+     
+
         
         
    
