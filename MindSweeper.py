@@ -15,15 +15,16 @@ Background = (46, 45, 45)
 Grid = (255, 255 ,255)
 
 def main():  
-     pygame.init()
-     screen = pygame.display.set_mode((Width, Height))
-     pygame.display.set_caption("Mind Sweeper")
-     font =pygame.font.SysFont("damascus",24)
-     current_running = True
-     game_ended = False
-     while current_running:
+    pygame.init()
+    screen = pygame.display.set_mode((Width, Height))
+    pygame.display.set_caption("Mind Sweeper")
+    font =pygame.font.SysFont("damascus",24)
+    current_running = True
+    game_ended = False
+    while current_running:
         screen.fill(Background)
-     for event in pygame.event.get():
+
+        for event in pygame.event.get():
           if event.type ==pygame.QUIT:
              current_running = False
 
@@ -32,12 +33,21 @@ def main():
              r, c = y // Tiles_Area, x // Tiles_Area
 
              if event.button == 1:
-                if board[r][c] == -1:
+                if board[r][c] == -1: #checking for bomb
                     game_ended = True
                     reveal_tiles = [[True for _ in range((Columns))] for _ in range(Rows)]
                 else:
                     empties(r, c)
              elif event.button ==3:
+                    warnings[r][c] = not warnings[r][c]
+    
+    #drawing goes here
+        for r in range(Rows):
+            for c in range(Columns):
+               rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
+               pygame.draw.rect(screen, Grid, rect, 1)
+               
+           
                     
                 
                 
