@@ -31,7 +31,15 @@ def main():
              x, y = pygame.mouse.get_pos()
              r, c = y // Tiles_Area, x // Tiles_Area
 
-            if event.button == 1:
+             if event.button == 1:
+                if board[r][c] == -1:
+                    game_ended = True
+                    reveal_tiles = [[True for _ in range((Columns))] for _ in range(Rows)]
+                else:
+                    empties(r, c)
+             elif event.button ==3:
+                    
+                
                 
              
         
