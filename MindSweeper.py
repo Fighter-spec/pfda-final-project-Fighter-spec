@@ -77,7 +77,12 @@ def main():
                  all_revealed = False
                  break
           if not all_revealed:
-            break
+             break
+          
+       if all_revealed:
+          game_ended = True
+          #for debugging-
+          print("You won!")
 
          
               
