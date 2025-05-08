@@ -51,13 +51,13 @@ def main():
 
                if reveal_tiles[r][c]:
                   if board[r][c] == -1:
-                     tiles_image = tile_types['warning']
+                     tile_image = tile_types['mine']
                 
                   else:
                      tile_image = tile_types[str(board[r][c])]
 
                elif  warnings[r][c]:
-                  tile_image = tile_types['warning']
+                  tile_image = tile_types['mine']
                else:
                    tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
@@ -78,7 +78,7 @@ def load_img(file):
 
 tile_types = {
     'empty':  load_img('Mine_Icon_dark 2.png'),
-    'hidden':  load_img('Mine_Icon 2.png'),
+    'mine':  load_img('Mine_Icon 2.png'),
     'warning': load_img('Mine_Icon_dark 3.png'),
     '0': load_img('Mine_Icon_ 1.png'),
     '1': load_img('Mine_Icon 3.png'),
