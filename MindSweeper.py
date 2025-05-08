@@ -52,7 +52,15 @@ def main():
                if reveal_tiles[r][c]:
                   if board[r][c] == -1:
                      tiles_image = tile_types['warning']
-                  
+                
+                  else:
+                     tile_image = tile_types[str(board[r][c])]
+
+               elif  warnings[r][c]:
+                  tile_image = tile_types['warning']
+               else:
+                   tile_image = tile_types['hidden']   
+               screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
                   
 
                
