@@ -40,6 +40,8 @@ def main():
                           reveal_tiles[r_][c_] = True
                 if game_ended:
                    text = font.render("Uh oh. You went boom!", True, (255,0,0))
+                   #centering the text
+                   screen.blit(text, (Width // 2 - 60, Height // 2 - 20))
              
                 else:
                     empties(r, c)
@@ -67,6 +69,19 @@ def main():
                    tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
     pygame.display.update()
+    if not game_ended:
+       all_revealed = True
+       for r in range(Rows):
+          for c in range(Columns):
+              if board[r][c] != -1 and not  reveal_tiles[r][c]:
+                 all_revealed = False
+                 break
+          if not all_revealed:
+            break
+
+         
+              
+        
                   
 
                
