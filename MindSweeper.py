@@ -68,7 +68,7 @@ def main():
                else:
                    tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
-    pygame.display.update()
+    
     if not game_ended:
        all_revealed = True
        for r in range(Rows):
@@ -80,9 +80,22 @@ def main():
              break
           
        if all_revealed:
-          game_ended = True
-          #for debugging-
-          print("You won!")
+          win_text = font.render("You Survived!", True, (255, 255, 255))
+          text_bg = win_text.get_rect(center=(Width//2, Height//2))
+
+          rect_width = text_bg.width + 40
+          rect_height = text_bg.height + 20
+          rect_x = text_bg.x - 10
+          rect_y = text_bg.y - 10
+
+          pygame.draw.rect(screen, (0,0,0), (rect_x, rect_y, rect_width, rect_height))
+
+          screen.blit(win_text, text_bg)
+
+
+
+    pygame.display.update()
+
 
          
               
