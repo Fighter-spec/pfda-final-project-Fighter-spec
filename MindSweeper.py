@@ -35,7 +35,12 @@ def main():
              if event.button == 1:
                 if board[r][c] == -1: #checking for bomb
                     game_ended = True
-                    reveal_tiles = [[True for _ in range((Columns))] for _ in range(Rows)]
+                    for r_ in range(Rows):
+                       for c_ in range(Columns):
+                          reveal_tiles[r_][c_] = True
+                if game_ended:
+                   text = font.render("Uh oh. You went boom!", True, (255,0,0))
+             
                 else:
                     empties(r, c)
              elif event.button ==3:
@@ -61,6 +66,7 @@ def main():
                else:
                    tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
+    pygame.display.update()
                   
 
                
