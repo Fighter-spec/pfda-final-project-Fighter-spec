@@ -8,7 +8,7 @@ Height = 800
 Rows = 10
 Columns = 10
 Tiles_Area = Width // Columns
-Mine_Total = 10
+Mine_Total = 15
 
 #Graphics
 Background = (46, 45, 45)
@@ -21,7 +21,7 @@ tile_types = {
    'empty': load_img('Mine_Icon_dark 2.png'),
    'mine': load_img('Mine_Icon_dark 1.png'),
    'warning': load_img('Mine_Icon_dark 3.png'),
-   '0': load_img('Mine_Icon 1.png'),
+   '0': load_img('Mine_Icon_dark 2.png'),
    '1': load_img('Mine_Icon 3.png'),
    '2': load_img('Mine_Icon 4.png'),
    '3': load_img('Mine_Icon 5.png'),
@@ -124,7 +124,7 @@ def main():
                   tile_image = tile_types['warning']
             else:
                tile_image = tile_types['hidden']   
-               screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
+            screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
     
 
       if not game_ended:
