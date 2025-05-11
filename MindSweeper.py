@@ -4,7 +4,7 @@ import random
 
 #window size setup
 Width = 800
-Height = 800
+Height = 840
 Rows = 10
 Columns = 10
 Tiles_Area = Width // Columns
@@ -83,6 +83,12 @@ def main():
    game_ended = False
    player_won = False
    loss_option = None
+
+
+   
+
+
+
    while current_running:
       screen.fill(Background)
 
@@ -110,6 +116,7 @@ def main():
          for c in range(Columns):
             rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
             pygame.draw.rect(screen, Grid, rect, 1)
+
 
             tile_image = None
 
