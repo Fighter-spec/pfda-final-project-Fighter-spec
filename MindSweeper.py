@@ -96,22 +96,6 @@ def main():
 
     pygame.display.update()
 
-
-         
-              
-        
-                  
-
-               
-           
-                    
-                
-                
-             
-        
-     
-
-
 def load_img(file):
   return pygame.transform.scale(pygame.image.load(file), (Tiles_Area, Tiles_Area))
 
@@ -131,8 +115,8 @@ tile_types = {
     'hidden': load_img('Mine_Icon 2.png')
  }
 
-for i in range(1,9):
-  tile_types[str(i)] = load_img(f'Mine_Icon {i}.png')
+#for i in range(1,9):
+  #tile_types[str(i)] = load_img(f'Mine_Icon {i}.png')
 
 
 #Creating the Grid for the Game
