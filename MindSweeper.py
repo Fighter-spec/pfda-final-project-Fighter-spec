@@ -99,36 +99,38 @@ def main():
                   for r_ in range(Rows):
                      for c_ in range(Columns):
                         reveal_tiles[r_][c_] = True
-               
-             
-                else:
+               else:
                     empties(r, c)
-             elif event.button ==3:
-                    warnings[r][c] = not warnings[r][c]
+            elif event.button ==3:
+               warnings[r][c] = not warnings[r][c]
     
         #drawing goes here
-        for r in range(Rows):
-            for c in range(Columns):
-               rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
-               pygame.draw.rect(screen, Grid, rect, 1)
+      for r in range(Rows):
+         for c in range(Columns):
+            rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
+            pygame.draw.rect(screen, Grid, rect, 1)
 
-               tile_image = None
+            tile_image = None
 
-               if reveal_tiles[r][c]:
-                  if board[r][c] == -1:
-                     tile_image = tile_types['mine']
-                
-                  else:
-                     tile_image = tile_types[str(board[r][c])]
-
-               elif  warnings[r][c]:
+            if reveal_tiles[r][c]:
+               if board[r][c] == -1:
                   tile_image = tile_types['mine']
+                
                else:
-                   tile_image = tile_types['hidden']   
+                  tile_image = tile_types[str(board[r][c])]
+
+            elif  warnings[r][c]:
+                  tile_image = tile_types['mine']
+            else:
+               tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
     
-    if not game_ended:
-       all_revealed = True
+
+
+
+    
+      if not game_ended:
+       all_revealed = all(
        for r in range(Rows):
           for c in range(Columns):
               if board[r][c] != -1 and not  reveal_tiles[r][c]:
