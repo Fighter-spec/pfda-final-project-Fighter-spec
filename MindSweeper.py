@@ -128,29 +128,17 @@ def main():
 
 
 
-    
+
       if not game_ended:
-       all_revealed = all(
-       for r in range(Rows):
+        all_revealed = all(
+          reveal_tiles[r][c] or board[r][c] == -1
+          for r in range(Rows)
           for c in range(Columns):
-              if board[r][c] != -1 and not  reveal_tiles[r][c]:
-                 all_revealed = False
-                 break
-          if not all_revealed:
-             break
-          
-       if all_revealed:
-          win_text = font.render("You Survived!", True, (255, 255, 255))
-          text_bg = win_text.get_rect(center=(Width//2, Height//2))
-
-          rect_width = text_bg.width + 40
-          rect_height = text_bg.height + 20
-          rect_x = text_bg.x - 10
-          rect_y = text_bg.y - 10
-
-          pygame.draw.rect(screen, (0,0,0), (rect_x, rect_y, rect_width, rect_height))
-
-          screen.blit(win_text, text_bg)
+        )
+        if all_revealed:
+           player_won = True
+           game_ended = True
+           
 
 
 
