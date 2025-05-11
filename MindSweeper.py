@@ -75,13 +75,14 @@ def empties(r, c):
                 empties(r + dr, c + dc)
 
 def main():  
-    pygame.init()
-    screen = pygame.display.set_mode((Width, Height))
-    pygame.display.set_caption("Mind Sweeper")
-    font =pygame.font.SysFont("Arial",24)
-    current_running = True
-    game_ended = False
-    while current_running:
+   pygame.init()
+   screen = pygame.display.set_mode((Width, Height))
+   pygame.display.set_caption("Mind Sweeper")
+   font =pygame.font.SysFont("Arial",24)
+   current_running = True
+   game_ended = False
+   player_won = False
+   while current_running:
         screen.fill(Background)
 
         for event in pygame.event.get():
@@ -108,7 +109,7 @@ def main():
              elif event.button ==3:
                     warnings[r][c] = not warnings[r][c]
     
-    #drawing goes here
+        #drawing goes here
         for r in range(Rows):
             for c in range(Columns):
                rect = pygame.Rect(c * Tiles_Area, r * Tiles_Area, Tiles_Area, Tiles_Area)
