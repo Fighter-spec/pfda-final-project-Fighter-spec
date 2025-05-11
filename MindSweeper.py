@@ -126,10 +126,7 @@ def main():
                tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
     
-
-
-
-
+    
       if not game_ended:
         all_revealed = all(
           reveal_tiles[r][c] or board[r][c] == -1
@@ -150,6 +147,7 @@ def main():
             message = "You're the GOAT!"
             color = (0,255,0) #displays green win text!
          else:
+            #randomly generates a loss message!
             loss_option = random.randint(0,9)
             if(loss_option ==0):
              message = "Oh no. You went boom."
@@ -183,7 +181,7 @@ def main():
              color(255,0,0)
          end_text = font.render(message, True, color)
          text_bg = end_text.get_rect(center=(Width // 2, Height //2 ))
-         pygame.draw.rect(screen, (0,0,0), text_bg.inflate(40,20))
+         pygame.draw.rect(screen, (0,0,0), text_bg.inflate(40,20)) #changes size of existing drawn object
          screen.blit(end_text, text_bg)
                                      
             
