@@ -18,7 +18,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((Width, Height))
     pygame.display.set_caption("Mind Sweeper")
-    font =pygame.font.SysFont("damascus",24)
+    font =pygame.font.SysFont("Arial",24)
     current_running = True
     game_ended = False
     while current_running:
