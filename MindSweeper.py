@@ -82,7 +82,7 @@ def main():
    current_running = True
    game_ended = False
    player_won = False
-   loss_option = 0
+   loss_option = None
    while current_running:
       screen.fill(Background)
 
@@ -136,6 +136,8 @@ def main():
         if all_revealed:
            player_won = True
            game_ended = True
+      elif loss_option is None and not player_won:
+         loss_option = random.randint(0,9)
       if game_ended:
          #new dimming feature that makes a game over more obvious.
          dim_overlay = pygame.Surface((Width, Height))
@@ -148,7 +150,6 @@ def main():
             color = (0,255,0) #displays green win text!
          else:
             #randomly generates a loss message!
-            loss_option = random.randint(0,9)
             if (loss_option ==0):
              message = "Oh no. You went boom."
              color = (255,0,0)
