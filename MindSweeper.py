@@ -63,16 +63,16 @@ for r in range(Rows):
 
     #potential challenge: keep everything in bounds when showing empties!
 def empties(r, c):
-    if not(0 <= r < Rows and 0 <= c < Columns):
+   if not(0 <= r < Rows and 0 <= c < Columns):
         return
-    if reveal_tiles[r][c] or warnings[r][c]:
+   if reveal_tiles[r][c] or warnings[r][c]:
         return
-    reveal_tiles[r][c] = True
-    if board[r][c] == 0:
-       for dr in [-1, 0, 1]:
-          for dc in [-1, 0, 1]:
-             if dr != 0 or dc != 0:
-                empties(r + dr, c + dc)
+   reveal_tiles[r][c] = True
+   if board[r][c] == 0:
+      for dr in [-1, 0, 1]:
+         for dc in [-1, 0, 1]:
+            if dr != 0 or dc != 0:
+               empties(r + dr, c + dc)
 
 def main():  
    pygame.init()
@@ -83,26 +83,23 @@ def main():
    game_ended = False
    player_won = False
    while current_running:
-        screen.fill(Background)
+      screen.fill(Background)
 
-        for event in pygame.event.get():
-          if event.type ==pygame.QUIT:
-             current_running = False
+      for event in pygame.event.get():
+         if event.type ==pygame.QUIT:
+            current_running = False
 
-          elif event.type == pygame.MOUSEBUTTONDOWN and not game_ended:
-             x, y = pygame.mouse.get_pos()
-             r, c = y // Tiles_Area, x // Tiles_Area
+         elif event.type == pygame.MOUSEBUTTONDOWN and not game_ended:
+            x, y = pygame.mouse.get_pos()
+            r, c = y // Tiles_Area, x // Tiles_Area
 
-             if event.button == 1:
-                if board[r][c] == -1: #checking for bomb
-                    game_ended = True
-                    for r_ in range(Rows):
-                       for c_ in range(Columns):
-                          reveal_tiles[r_][c_] = True
-                if game_ended:
-                   text = font.render("Uh oh. You went boom!", True, (255,0,0))
-                   #centering the text
-                   screen.blit(text, (Width // 2 - 60, Height // 2 - 20))
+            if event.button == 1:
+               if board[r][c] == -1: #checking for bomb
+                  game_ended = True
+                  for r_ in range(Rows):
+                     for c_ in range(Columns):
+                        reveal_tiles[r_][c_] = True
+               
              
                 else:
                     empties(r, c)
