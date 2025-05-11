@@ -138,7 +138,13 @@ def main():
         if all_revealed:
            player_won = True
            game_ended = True
-           
+      if game_ended:
+         #new dimming feature that makes a game over more obvious.
+         dim_overlay = pygame.Surface((Width, Height))
+         dim_overlay.set_alpha(120)
+         dim_overlay.fill((0,0,0))
+         screen.blit(dim_overlay, (0,0))
+         
 
 
 
