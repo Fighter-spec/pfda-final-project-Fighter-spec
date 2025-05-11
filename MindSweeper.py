@@ -121,7 +121,7 @@ def main():
                   tile_image = tile_types[str(board[r][c])]
 
             elif  warnings[r][c]:
-                  tile_image = tile_types['mine']
+                  tile_image = tile_types['warning']
             else:
                tile_image = tile_types['hidden']   
                screen.blit(tile_image, (c * Tiles_Area, r * Tiles_Area))
@@ -131,7 +131,7 @@ def main():
         all_revealed = all(
           reveal_tiles[r][c] or board[r][c] == -1
           for r in range(Rows)
-          for c in range(Columns):
+          for c in range(Columns)
          )
         if all_revealed:
            player_won = True
@@ -149,34 +149,34 @@ def main():
          else:
             #randomly generates a loss message!
             loss_option = random.randint(0,9)
-            if(loss_option ==0):
+            if (loss_option ==0):
              message = "Oh no. You went boom."
              color = (255,0,0)
-            if(loss_option ==1):
+            if (loss_option ==1):
              message = "Better luck next time."
              color = (255,0,0)
-            if(loss_option ==2):
+            if (loss_option ==2):
              message = "I expected more from you!"
              color = (255,0,0)
-            if(loss_option ==3):
+            if (loss_option ==3):
              message = "Blast it all!"
              color = (255,0,0)
-            if(loss_option==4):
+            if (loss_option==4):
              message = "Game Over. But never forgotten."
              color = (255,0,0)
-            if(loss_option==5):
+            if (loss_option==5):
              message = "Another soldier lost."
              color = (255,0,0)
-            if(loss_option ==6):
+            if (loss_option ==6):
              message = "Tragic Combustion Achieved."
-             color(255,0,0)
-            if(loss_option ==7):
+             color = (255,0,0)
+            if (loss_option ==7):
              message = "Oppenheimer knows your location"
              color = (255,0,0)
-            if(loss_option ==8):
+            if (loss_option ==8):
              message = "[Creeper sent a friend request]"
              color = (255,0,0)
-            if(loss_option ==9):
+            if (loss_option ==9):
              message = "Who put that there?"
              color = (255,0,0)
          end_text = font.render(message, True, color)
