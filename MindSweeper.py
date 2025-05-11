@@ -82,6 +82,7 @@ def main():
    current_running = True
    game_ended = False
    player_won = False
+   loss_option = 0
    while current_running:
       screen.fill(Background)
 
@@ -144,7 +145,46 @@ def main():
          dim_overlay.set_alpha(120)
          dim_overlay.fill((0,0,0))
          screen.blit(dim_overlay, (0,0))
-         
+
+         if player_won:
+            message = "You're the GOAT!"
+            color = (0,255,0) #displays green win text!
+         else:
+            loss_option = random.randint(0,9)
+            if(loss_option ==0):
+             message = "Oh no. You went boom."
+             color(255,0,0)
+            if(loss_option ==1):
+             message = "Better luck next time."
+             color(255,0,0)
+            if(loss_option ==2):
+             message = "I expected more from you!"
+             color(255,0,0)
+            if(loss_option ==3):
+             message = "Blast it all!"
+             color(255,0,0)
+            if(loss_option==4):
+             message = "Game Over. But never forgotten."
+             color(255,0,0)
+            if(loss_option==5):
+             message = "Another soldier lost."
+             color(255,0,0)
+            if(loss_option ==6):
+             message = "Tragic Combustion Achieved."
+             color(255,0,0)
+            if(loss_option ==7):
+             message = "Oppenheimer knows your location"
+             color(255,0,0)
+            if(loss_option ==8):
+             message = "[Creeper sent a friend request]"
+             color(255,0,0)
+            if(loss_option ==9):
+             message = "Who put that there?"
+             color(255,0,0)
+
+
+
+
 
 
 
