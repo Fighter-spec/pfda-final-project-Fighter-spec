@@ -181,6 +181,12 @@ def main():
             if(loss_option ==9):
              message = "Who put that there?"
              color(255,0,0)
+         end_text = font.render(message, True, color)
+         text_bg = end_text.get_rect(center=(Width // 2, Height //2 ))
+         pygame.draw.rect(screen, (0,0,0), text_bg.inflate(40,20))
+         screen.blit(end_text, text_bg)
+                                     
+            
 
 
 
