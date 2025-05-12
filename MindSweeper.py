@@ -8,7 +8,23 @@ Height = 800
 Rows = 10
 Columns = 10
 Tiles_Area = Width // Columns
-Mine_Total = 10
+
+while True:
+      try:
+         Mine_Total = int(input("Enter the number of mines (1-99) :"))
+         if 1 <= Mine_Total < 100:
+            break
+         else:
+            if(Mine_Total <1):
+               Mine_Total =1
+               print("Entered value too low. Setting Mines to 1.")
+            if(Mine_Total >99):
+               Mine_Total =99
+               print("Entered value is too high. Setting mines to 99.")
+      except ValueError:
+         Mine_Total = int(10)
+         print("Invalid input. Please use a number (1-99).")
+                            
 
 #Graphics
 Background = (46, 45, 45)
@@ -204,22 +220,6 @@ def main():
 
 
 if __name__ == "__main__":
-   while True:
-      try:
-         Mine_Total = int(input("Enter the number of mines (1-99) :"))
-         if 1 <= Mine_Total < 100:
-            break
-         else:
-            if(Mine_Total <1):
-               Mine_Total =1
-               print("Entered value too low. Setting Mines to 1.")
-            if(Mine_Total >99):
-               Mine_Total =99
-               print("Entered value is too high. Setting mines to 99.")
-      except ValueError:
-         Mine_Total = int(10)
-         print("Invalid input. Please use a number (1-99).")
-                            
    main()
 
 
