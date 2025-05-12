@@ -227,14 +227,6 @@ def main():
          pygame.draw.rect(screen, (0,0,0), text_bg.inflate(40,20)) #changes size of existing drawn object
          screen.blit(end_text, text_bg)
                                      
-            
-
-
-
-
-
-
-
       pygame.display.update()
 
 
