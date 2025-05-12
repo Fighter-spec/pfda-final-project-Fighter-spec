@@ -70,6 +70,13 @@ def generate_board(rows, cols, mine_total):
          if board[r][c] == -1:
             continue
          count = 0
+         for dr in [-1, 0, 1]:
+            for dc in [-1, 0, 1]:
+               nr, nc = r + dr, c + dc
+               if 0 <= nr < rows and 0 <= nc < cols:
+                  if board[nr][nc] == -1:
+                     count +=1
+            [r][c] = count
          
 
 

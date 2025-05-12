@@ -3,6 +3,10 @@
 ## Demo
 Demo Video: <URL>
 
+## Reference Video
+I used this video to learn how minesweeper is played, and to plan what functions would be necessary.
+https://www.youtube.com/watch?v=7B85WbEiYf4&ab_channel=Buffington
+
 ## GitHub Repository
 GitHub Repo: https://github.com/Fighter-spec/pfda-final-project-Fighter-spec.git
 
