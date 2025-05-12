@@ -57,6 +57,25 @@ board = [[0 for _ in range(Columns)] for _ in range(Rows)]
 reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
 warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
 
+
+def generate_board(rows, cols, mine_total):
+   board = [[0 for _ in range(cols)] for _ in range(rows)]
+   mine_location = random.sample(range(rows * cols), mine_total)
+   for location in mine_location:
+      r, c = divmod(loc, cols)
+      board[r][c] = -1
+
+   for r in range(rows):
+      for c in range(cols):
+         if board[r][c] == -1:
+            continue
+         count = 0
+         
+
+
+
+
+
 #Mine Setup
 mine_location = random.sample(range(Rows * Columns), Mine_Total)
 for loc in mine_location:
