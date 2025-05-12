@@ -51,43 +51,34 @@ tile_types = {
    'hidden': load_img('Mine_Icon 2.png')
 }
 
-#Creating the Grid for the Game
-#*underscore can denote a throwaway variable that is not reused, just for incrementing purposes.*
-board = [[0 for _ in range(Columns)] for _ in range(Rows)]
-reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
-warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
-
-
-def generate_board(rows, cols, mine_total):
-   board = [[0 for _ in range(cols)] for _ in range(rows)]
-   mine_location = random.sample(range(rows * cols), mine_total)
+#mine setup
+def generate_board(Rows, Cols, Mine_total):
+   board = [[0 for _ in range(Cols)] for _ in range(Rows)]
+   mine_location = random.sample(range(Rows * Cols), Mine_Total)
    for location in mine_location:
-      r, c = divmod(loc, cols)
+      r, c = divmod(location, Cols)
       board[r][c] = -1
 
-   for r in range(rows):
-      for c in range(cols):
+   for r in range(Rows):
+      for c in range(Cols):
          if board[r][c] == -1:
             continue
          count = 0
          for dr in [-1, 0, 1]:
             for dc in [-1, 0, 1]:
                nr, nc = r + dr, c + dc
-               if 0 <= nr < rows and 0 <= nc < cols:
+               if 0 <= nr < Rows and 0 <= nc < Cols:
                   if board[nr][nc] == -1:
                      count +=1
-            [r][c] = count
+            board[r][c] = count
+   return board
          
 
+board = generate_board(Rows, Columns, Mine_Total)
+reveal_tiles = [[False for _ in range(Columns)] for _ in range (Rows)]
+warnings = [[False for _ in range(Columns)] for _ in range(Rows)]
 
 
-
-
-#Mine Setup
-mine_location = random.sample(range(Rows * Columns), Mine_Total)
-for loc in mine_location:
-   row, column= divmod(loc, Columns)
-   board[row][column] = -1
 #Tuple splits the division and remainder into the two variables listed
 
 for r in range(Rows):
