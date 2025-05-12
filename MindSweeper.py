@@ -11,7 +11,9 @@ Tiles_Area = Width // Columns
 
 while True:
       try:
-         Mine_Total = int(input("Enter the number of mines (1-99) :"))
+         print("Welcome to Mindsweeper!")
+         print("10 Mines is standard for a game, but you can choose your difficulty!")
+         Mine_Total = int(input("Enter the number of mines (1-99). :"))
          if 1 <= Mine_Total < 100:
             break
          else:
