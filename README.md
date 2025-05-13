@@ -1,7 +1,7 @@
 # Mind Sweeper
 
 ## Demo
-Demo Video: <URL>
+Demo Video: https://youtu.be/tedm4NNMs2M
 
 ## Reference Video
 I used this video to learn how minesweeper is played, and to plan what functions would be necessary.
