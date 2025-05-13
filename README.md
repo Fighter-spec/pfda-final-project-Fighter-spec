@@ -1,18 +1,31 @@
 # Mind Sweeper
 
 ## Demo
-Demo Video: https://youtu.be/tedm4NNMs2M
+ Demo Video: https://youtu.be/tedm4NNMs2M
 
 ## Reference Video
-I used this video to learn how minesweeper is played, and to plan what functions would be necessary.
-https://www.youtube.com/watch?v=7B85WbEiYf4&ab_channel=Buffington
+ I used this video to learn how minesweeper is played, and to plan what functions would be necessary.
+ https://www.youtube.com/watch?v=7B85WbEiYf4&ab_channel=Buffington
 
 ## GitHub Repository
-GitHub Repo: https://github.com/Fighter-spec/pfda-final-project-Fighter-spec.git
+ GitHub Repo: https://github.com/Fighter-spec/pfda-final-project-Fighter-spec.git
 
 ## Description
-This game is a remake of minesweeper, using many of the features we specifically learned across this semester of programming for digital arts. I mostly made use of player input, click detection, image loading, dictionaries, random, and pygame. This game hinged upon nests of up to 4 loops at a time, providing a real challenge to ensure proper functionality.
+ This game is a remake of minesweeper, using many of the features we specifically learned across this semester of programming for digital arts. I mostly made use of player input, left versus right click detection, image loading, dictionaries, random, and pygame. This game sometimes hinged upon nests of up to 4 loops at a time, providing a real challenge to ensure proper functionality.
 
+
+
+## Meeting Requirements
+ Aside from the main() function, I was able to convert at least 3 of the functionalities into seperated functions, although more may be possible:
+
+ -generate_board: handles mine placement based on the player's input
+ -empties: handles the light and dark tiles with no symbols, and dictates the logic of when they appear
+ -load_img: takes in the custom art of the tiles, and scales it all to fit the size of the board specified in a uniform fashion.
+
+ Wins and losses were handled by a "while running" rather than a seperated function from main in this version.
+
+
+## Mechanics
 Upon pressing play, you will be welcomed in the command line. Then you will be instructed to input a number from 1-99. The higher the number is, the harder the game becomes. It is recommended for you to try a value of 10 mines total. Once you have made your selection,
 100 tiles on a 10x10 grid are randomized as either safe or un-safe, depending on your mine total. This is a logic puzzle game, and the way to win is by clicking on every safe tile without ever clicking on an un-safe tile even once.
 
